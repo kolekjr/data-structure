@@ -10,23 +10,14 @@
 
 int main()
 {
+	// Single linked list
+	ds::linked_list li;
 
-	datastructure::list li;
-	int tmp;
+	// Circular linked list
+	ds::circular_list cli;
 
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << "[" << i << "] = ";
-		std::cin >> tmp;
-		li.insert_end(tmp);
-
-	}
-
-	li.insert_middle(100, 3);
-	li.print_list();
-	std::cout << "========" << std::endl;
-	li.delete_start();
-	li.print_list();
+	// Circular linked list with border
+	ds::circular_list_border clib;
 
 	return 0;
 }

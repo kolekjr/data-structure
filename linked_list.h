@@ -8,27 +8,65 @@
 #ifndef LINKED_LIST_H_
 #define LINKED_LIST_H_
 
-namespace datastructure
+namespace ds
 {
 
 struct node
 {
+
 	int data;
 	node *next;
+
+	node(int value) : data(value), next(nullptr) {}
 };
 
-class list
+/* Single linked list */
+class linked_list
 {
+
 	node *head;
 	node *tail;
 
 public:
-	list() : head(nullptr), tail(nullptr) {}
-	void insert_end(const int &value);
-	void insert_start(const int &value);
-	void insert_middle(const int &value,const int pos);
-	void delete_start();
-	void print_list() const;
+	linked_list() : head(nullptr), tail(nullptr) {}
+	void insert_first(int value);
+	void insert_last(int value);
+	void insert_on_pos(int value, int pos);
+	void delete_first();
+	void print() const;
+};
+
+
+
+/* Circular linked list */
+class circular_list
+{
+	node *last;
+
+public:
+	circular_list() : last(nullptr) {}
+	void insert_first(int value);
+	void insert_last(int value);
+	void delete_first();
+	void print() const;
+};
+
+/* Circular linked list with border */
+
+class circular_list_border
+{
+	node* header;
+
+public:
+	circular_list_border()
+	{
+		header = new node(-1);
+		header->next = header;
+	}
+	void insert_first(int value);
+	void insert_last(int value);
+	void delete_first();
+	void print() const;
 };
 
 }
