@@ -65,6 +65,22 @@ void linked_list::delete_first()
 	delete tmp;
 }
 
+void linked_list::remove(int value)
+{
+	node **indirect = &head;
+	node *tmp;
+
+	while ((*indirect)->data != value)
+	{
+		indirect = &((*indirect)->next);
+	}
+	tmp = *indirect;
+
+	*indirect = (*indirect)->next;
+
+	delete tmp;
+}
+
 void linked_list::print() const
 {
 	node *curr = head;
@@ -173,6 +189,22 @@ void circular_list_border::print() const
 	}
 }
 
+void double_linked_list::print_first() const
+{
+	for (dlnode *n = first; n != nullptr; n = n->next)
+	{
+		std::cout << n->data << std::endl;
+	}
 }
+
+void double_linked_list::print_last() const
+{
+	for (dlnode *n = last; n != nullptr; n = n->prev)
+	{
+		std::cout << n->data << std::endl;
+	}
+}
+
+} // namespace ds
 
 

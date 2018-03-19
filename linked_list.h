@@ -11,13 +11,25 @@
 namespace ds
 {
 
+/* node for single linked list */
+
 struct node
 {
-
 	int data;
 	node *next;
 
 	node(int value) : data(value), next(nullptr) {}
+};
+
+/* node for double linked list */
+
+struct dlnode
+{
+	int data;
+	dlnode *prev;
+	dlnode *next;
+
+	dlnode(int value) : data(value), prev(nullptr), next(nullptr) {}
 };
 
 /* Single linked list */
@@ -33,6 +45,7 @@ public:
 	void insert_last(int value);
 	void insert_on_pos(int value, int pos);
 	void delete_first();
+	void remove(int value);
 	void print() const;
 };
 
@@ -67,6 +80,21 @@ public:
 	void insert_last(int value);
 	void delete_first();
 	void print() const;
+};
+
+/* Circular linked list with border */
+
+class double_linked_list
+{
+	dlnode *first;
+	dlnode *last;
+
+public:
+	double_linked_list() : first(nullptr), last(nullptr) {}
+	void print_first() const;
+	void print_last() const;
+	void insert(int value, dlnode *prev);
+	void remove(dlnode *node);
 };
 
 }
