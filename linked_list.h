@@ -91,10 +91,11 @@ class double_linked_list
 
 public:
 	double_linked_list() : first(nullptr), last(nullptr) {}
-	void print_first() const;
-	void print_last() const;
-	void insert(int value, dlnode *prev);
-	void remove(dlnode *node);
+	void insert(int value);
+	void remove(int value);
+	void print() const;
+	void print_reverse() const;
+
 };
 
 }

@@ -189,19 +189,69 @@ void circular_list_border::print() const
 	}
 }
 
-void double_linked_list::print_first() const
+/* Double linked list */
+
+void double_linked_list::insert(int value)
 {
-	for (dlnode *n = first; n != nullptr; n = n->next)
+	dlnode *tmp = new dlnode(value);
+
+	if(first == nullptr)
 	{
-		std::cout << n->data << std::endl;
+		first = tmp;
+		last = first;
+	}
+	else
+	{
+		tmp->next = first;
+		first->prev = tmp;
+		first = tmp;
+
 	}
 }
 
-void double_linked_list::print_last() const
+void double_linked_list::remove(int value)
 {
-	for (dlnode *n = last; n != nullptr; n = n->prev)
+	dlnode *prev = nullptr;
+	dlnode *curr = first;
+
+	while (curr != nullptr && curr->data != value)
 	{
-		std::cout << n->data << std::endl;
+		prev = curr;
+		curr = curr->next;
+	}
+
+	if (prev == nullptr)
+	{
+		delete curr;
+	}
+	else
+	{
+		prev->next = curr->next;
+		curr->next->prev = prev;
+		delete curr;
+	}
+
+}
+
+void double_linked_list::print() const
+{
+	dlnode *curr = first;
+
+	while (curr != nullptr)
+	{
+		std::cout << curr->data << std::endl;
+		curr = curr->next;
+	}
+}
+
+void double_linked_list::print_reverse() const
+{
+	dlnode *curr = last;
+
+	while (curr != nullptr)
+	{
+		std::cout << curr->data << std::endl;
+		curr = curr->prev;
 	}
 }
 

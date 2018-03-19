@@ -19,6 +19,9 @@ int main()
 	// Circular linked list with border
 	ds::circular_list_border clib;
 
+	// Double linked list
+	ds::double_linked_list dll;
+
 	return 0;
 }
 
