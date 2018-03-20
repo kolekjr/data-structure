@@ -27,17 +27,8 @@ int main()
 	// Stack
 	ds::stack stk;
 
+	// Queue
 	ds::queue que;
-
-	que.push(1);
-	que.push(2);
-	que.push(3);
-	que.push(4);
-	que.push(5);
-
-	std::cout << que.first() << std::endl;
-
-
 
 	return 0;
 }
