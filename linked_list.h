@@ -102,6 +102,6 @@ public:
 
 };
 
-}
+} // end namespace ds
 
 #endif /* LINKED_LIST_H_ */

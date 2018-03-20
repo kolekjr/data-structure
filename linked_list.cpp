@@ -205,7 +205,6 @@ void double_linked_list::insert(int value)
 		tmp->next = first;
 		first->prev = tmp;
 		first = tmp;
-
 	}
 }
 
@@ -255,6 +254,6 @@ void double_linked_list::print_reverse() const
 	}
 }
 
-} // namespace ds
+} // end namespace ds
 
 
