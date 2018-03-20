@@ -41,6 +41,7 @@ class linked_list
 
 public:
 	linked_list() : head(nullptr), tail(nullptr) {}
+
 	void insert_first(int value);
 	void insert_last(int value);
 	void insert_on_pos(int value, int pos);
@@ -58,6 +59,7 @@ class circular_list
 
 public:
 	circular_list() : last(nullptr) {}
+
 	void insert_first(int value);
 	void insert_last(int value);
 	void delete_first();
@@ -76,6 +78,7 @@ public:
 		header = new node(-1);
 		header->next = header;
 	}
+
 	void insert_first(int value);
 	void insert_last(int value);
 	void delete_first();
@@ -91,6 +94,7 @@ class double_linked_list
 
 public:
 	double_linked_list() : first(nullptr), last(nullptr) {}
+
 	void insert(int value);
 	void remove(int value);
 	void print() const;
